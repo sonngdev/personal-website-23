@@ -38,7 +38,7 @@ export default function PostPage({
             </header>
 
             <div
-              className="prose dark:prose-invert mt-10"
+              className="prose dark:prose-invert prose-a:decoration-gray-300 prose-code:before:hidden prose-code:after:hidden mt-10"
               dangerouslySetInnerHTML={{ __html: post.content }}
             />
           </article>

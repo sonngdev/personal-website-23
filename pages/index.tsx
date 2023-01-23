@@ -33,7 +33,7 @@ function HomePage() {
               Twitter
             </a>
             {', or email me at '}
-            <a href="mailto:son@sonng.dev">
+            <a href="mailto:son@sonng.dev" target="_blank" rel="noreferrer">
               son@sonng.dev
             </a>
             {'.'}

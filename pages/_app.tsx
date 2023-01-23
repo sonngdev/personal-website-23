@@ -3,7 +3,8 @@ import 'styles/rose-pine/prism-rose-pine-moon.css';
 
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
-import Header from '../components/header';
+import Header from 'components/header';
+import Footer from 'components/footer';
 import { Auth0Provider } from '@auth0/auth0-react';
 import { ThemeProvider } from 'contexts/theme';
 
@@ -50,11 +51,15 @@ export default function MyApp({ Component, pageProps }: AppProps) {
       </Head>
 
       <ThemeProvider>
-        <Header />
+        <div className="min-h-screen flex flex-col">
+          <Header />
 
-        <main className="py-14">
-          <Component {...pageProps} />
-        </main>
+          <main className="py-14 flex-1">
+            <Component {...pageProps} />
+          </main>
+
+          <Footer />
+        </div>
       </ThemeProvider>
     </Auth0Provider>
   );

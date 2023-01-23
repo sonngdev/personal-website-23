@@ -14,7 +14,7 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        light: '#F7F7F7', // Background color of logo
+        light: '#f7f7f7', // Background color of logo
         dark: '#1b1d22',
       },
       fontFamily: {

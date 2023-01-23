@@ -1,12 +1,11 @@
 import type { InferGetStaticPropsType } from 'next';
 import { useRouter } from 'next/router';
 import ErrorPage from 'next/error';
-import Comment from '../../components/comment';
-import Container from '../../components/container';
-import distanceToNow from '../../lib/dateRelative';
-import { getAllPosts, getPostBySlug } from '../../lib/getPost';
-import markdownToHtml from '../../lib/markdownToHtml';
 import Head from 'next/head';
+import Container from 'components/container';
+import distanceToNow from 'lib/dateRelative';
+import { getAllPosts, getPostBySlug } from 'lib/getPost';
+import markdownToHtml from 'lib/markdownToHtml';
 
 export default function PostPage({
   post,
@@ -20,7 +19,7 @@ export default function PostPage({
   return (
     <Container>
       <Head>
-        <title>{post.title} | My awesome blog</title>
+        <title>{post.title} @ Son Nguyen • Blog</title>
       </Head>
 
       {router.isFallback ? (
@@ -39,12 +38,10 @@ export default function PostPage({
             </header>
 
             <div
-              className="prose mt-10"
+              className="prose dark:prose-invert mt-10"
               dangerouslySetInnerHTML={{ __html: post.content }}
             />
           </article>
-
-          {/* <Comment /> */}
         </div>
       )}
     </Container>

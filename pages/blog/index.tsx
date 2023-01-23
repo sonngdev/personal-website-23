@@ -1,4 +1,5 @@
 import type { InferGetStaticPropsType } from 'next';
+import Head from 'next/head';
 import Link from 'next/link';
 import Container from '../../components/container';
 import distanceToNow from '../../lib/dateRelative';
@@ -9,6 +10,10 @@ export default function NotePage({
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
     <Container>
+      <Head>
+        <title>Son Nguyen • Blog</title>
+      </Head>
+
       {allPosts.length ? (
         allPosts.map((post) => (
           <article key={post.slug} className="mb-10">

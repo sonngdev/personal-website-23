@@ -16,3 +16,17 @@ corrupti aut. Expedita culpa aut deleniti officiis.
 
 Porro eum id sit quia expedita. Alias expedita asperiores. Corporis ex eum atque
 cum ea.
+
+```tsx
+console.log('hello world');
+
+interface IF {
+  content: string;
+}
+
+export default function Hello() {
+  return (
+    <div>Hello world</div>
+  )
+};
+```

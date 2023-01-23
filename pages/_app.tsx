@@ -5,6 +5,8 @@ import Head from 'next/head'
 import Header from '../components/header'
 import { Auth0Provider } from '@auth0/auth0-react'
 
+import 'prism-themes/rose-pine/prism-rose-pine-moon.css'
+
 export default function MyApp({ Component, pageProps }: AppProps) {
   return (
     <Auth0Provider

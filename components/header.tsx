@@ -1,8 +1,10 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { AnimatePresence, motion } from 'framer-motion';
 import { Sun, Moon } from 'react-feather';
 import Container from 'components/container';
 import { useTheme } from 'contexts/theme';
+import logo from 'public/logo/logo.png';
 
 export default function Header() {
   const { theme, toggleTheme } = useTheme();
@@ -11,13 +13,17 @@ export default function Header() {
     <header className="py-6">
       <Container>
         <nav className="flex justify-between">
+          <Link
+            href="/"
+            className="no-underline"
+          >
+            <div className="flex space-x-3 items-center">
+              <Image src={logo} alt="Logo" width={36} />
+              <span className="font-title font-semibold">Son Nguyen</span>
+            </div>
+          </Link>
+
           <div className="flex space-x-4 items-center">
-            <Link
-              href="/"
-              className="no-underline opacity-50 hover:opacity-100"
-            >
-              About
-            </Link>
             <Link
               href="/posts"
               className="no-underline opacity-50 hover:opacity-100"

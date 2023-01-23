@@ -65,6 +65,9 @@ module.exports = {
           highlightMed: '#dfdad9',
           highlightHigh: '#cecacd',
         },
+      },
+      fontFamily: {
+        title: ['Barlow', 'sans-serif'],
       }
     }
   },

@@ -1,10 +1,20 @@
-@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=Inter:wght@400;700&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
+  body {
+    @apply font-medium;
+    @apply bg-light;
+    @apply text-dark;
+    @apply dark:bg-dark;
+    @apply dark:text-light;
+    @apply transition-colors;
+    @apply antialiased;
+  }
+
   a {
     @apply underline;
     @apply underline-offset-2;

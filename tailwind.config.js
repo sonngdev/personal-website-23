@@ -18,7 +18,8 @@ module.exports = {
         dark: '#1b1d22',
       },
       fontFamily: {
-        title: ['Barlow', 'sans-serif'],
+        sans: ['Barlow', 'sans-serif'],
+        title: ['Inter', 'sans-serif'],
       }
     }
   },

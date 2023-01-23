@@ -31,7 +31,7 @@ export default function Header() {
               Projects
             </Link>
             <Link
-              href="/posts"
+              href="/blog"
               className="no-underline opacity-50 hover:opacity-100"
             >
               Blog

@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { AnimatePresence, motion } from 'framer-motion';
-import { Sun, Moon } from 'react-feather';
+import { Sun, Moon, Monitor } from 'react-feather';
 import Container from 'components/container';
 import { useTheme } from 'contexts/theme';
 
@@ -58,6 +58,17 @@ export default function Header() {
                     className="flex justify-center items-center"
                   >
                     <Moon size={16} />
+                  </motion.div>
+                )}
+                {theme === 'system' && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -10 }}
+                    key="dark-theme"
+                    className="flex justify-center items-center"
+                  >
+                    <Monitor size={16} />
                   </motion.div>
                 )}
               </AnimatePresence>

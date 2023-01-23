@@ -6,7 +6,7 @@ date: "2022-12-16"
 
 > This series of learnings occurred while I was building an Algorithm Visualizer app. This app is hosted on Netlify, you can check out my progress [here](https://algorithms.sonng.dev/). I might have a dedicated post for this project in the future.
 
-# Brief story
+## Brief story
 
 Four years after I started coding seriously, I finally had a chance to learn the browser’s drag-and-drop API. This happened today, while I was [replicating the Algorithm Visualizer app](https://youtu.be/msttfIHHkak) in React. In the beginning, I hard-coded the start node and the end node into a 50x20 grid. After managing to implement Dijkstra’s pathfinding algorithm and visualize the process, I started adding more features.
 
@@ -22,7 +22,7 @@ After some consideration, I decided to go with the last approach. I wanted to ma
 
 Alright. Off to the [MDN documentation](https://developer.mozilla.org/en-US/docs/Web/API/HTML_Drag_and_Drop_API) I went!
 
-# Elements of a drag-and-drop interaction
+## Elements of a drag-and-drop interaction
 
 To make dragging and dropping work, I needed the following things.
 
@@ -31,7 +31,7 @@ To make dragging and dropping work, I needed the following things.
 
 </aside>
 
-## The draggable element
+### The draggable element
 
 In my case, it would be the starting and ending nodes, which were, of course, `div` tags.
 
@@ -49,7 +49,7 @@ In my case, it would be the starting and ending nodes, which were, of course, `d
 }
 ```
 
-## The drop zone
+### The drop zone
 
 According to the [MDN doc](https://developer.mozilla.org/en-US/docs/Web/API/HTML_Drag_and_Drop_API#define_a_drop_zone), a drop zone must handle both the `dragover` and the `drop` events.
 
@@ -82,7 +82,7 @@ const handleDrop: DragEventHandler<HTMLDivElement> = (event) => {
 
 For more info about `dropEffect`, see [this section on MDN](https://developer.mozilla.org/en-US/docs/Web/API/HTML_Drag_and_Drop_API#define_the_drop_effect).
 
-## The elements in between
+### The elements in between
 
 For basic drag and drop to work, only a draggable and a drop zone is enough. However, in my case, I wanted some nice ✨ visual effects ✨ while dragging. Specifically, each gray node would need to light up when the start/end node was dragged over it. This would better demonstrate where the node would move to if it was dropped. Therefore, I needed to listen for `dropenter` and `dropleave` events for each gray node as well.
 
@@ -130,7 +130,7 @@ Note that depending on whether I was dragging the start node or the end node, th
 }
 ```
 
-# Unsuccessful state management attempt: `event.dataTransfer`
+## Unsuccessful state management attempt: `event.dataTransfer`
 
 Let’s review what we had until this point. There were 3 elements needed for the drag and drop feature: A draggable start/end node, a drop zone, and some visual effect for the gray nodes. The whole interaction could be described as follows:
 
@@ -195,7 +195,7 @@ const handleDrop: DragEventHandler<HTMLDivElement> = (event) => {
 
 But here is a major caveat: **I was wrong** 😭. [This Stack Overflow answer](https://stackoverflow.com/a/31922258/9744063) explained that due to security reasons, the information saved to `dataTransfer` could only be accessed in the `dragstart` and `drop` events, other events in the middle just saw an empty string when they called `event.dataTransfer.getData('text/plain')`. Although this made the interaction safer, it also made the `dataTransfer` object useless for our purpose.
 
-# Successful state management attempt: Good old React
+## Successful state management attempt: Good old React
 
 Time to go back to our old, reliable friend, the React state.
 
@@ -257,7 +257,7 @@ const handleDrop: DragEventHandler<HTMLDivElement> = (event) => {
 };
 ```
 
-# Conclusion
+## Conclusion
 
 Nowadays in the JavaScript/TypeScript and React ecosystem, there is a*t least* a library for everything you want to do. You can probably use `react-dnd` or `react-beautiful-dnd`, among others, to implement drag-and-drop interactions, especially more complex ones. However, my needs were simple enough that the browser’s default API was enough. Moreover, it is always good to dive into it at the lowest, simplest level before moving on to higher abstraction levels, right? 🤓
 

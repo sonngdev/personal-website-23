@@ -14,7 +14,7 @@ If you are moving to **[Remix](https://remix.run/)**, you might have noticed th
 🃏 Please keep in mind that this guide assumes a Remix app created with `create-remix` with no testing framework installed.
 </aside>
 
-# Install Jest
+## Install Jest
 
 First, install `jest` itself. If you are using `jest` version 28 or later, you must install `jest-environment-jsdom` too (according to their [migration guide](https://jestjs.io/docs/upgrading-to-jest28#jsdom)).  
 
@@ -91,7 +91,7 @@ Finally, add the familiar `test` NPM script to your `package.json` so that each 
 
 …And that’s it! 🎉 You have successfully set up Jest in your Remix app. Now you are free to install your favorite testing library and start testing with Jest right away. Mine is **[React Testing Library](https://testing-library.com/docs/react-testing-library/intro/)**, and if you want further guidance to install that, keep reading!
 
-# Install React Testing Library
+## Install React Testing Library
 
 As of the time of this post, `create-remix` initializes with React version 17, which is not the latest one (version 18). This is why we need to install React Testing Library version 12, because from version 13 onward, [support for React 17 or below is dropped](https://github.com/testing-library/react-testing-library/releases/tag/v13.0.0).
 
@@ -128,6 +128,6 @@ it('should show welcome message', () => {
 
 It sure feels good to see the green
 
-# Conclusion
+## Conclusion
 
 I hope you found this guide helpful. Besides the usual perks (and pains, haha), if done correctly, testing in React can be delightful. Happy coding, and remember to have good coverage for your code. If you have any questions, feel free to drop me a message on Twitter and I will be happy to get back to you. Cheers 🤜 🤛

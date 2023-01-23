@@ -11,5 +11,13 @@ module.exports = {
       opacity: ['disabled'],
     },
   },
+  theme: {
+    extend: {
+      colors: {
+        dark: '#191724',
+        light: '#fffaf3',
+      }
+    }
+  },
   plugins: [require('@tailwindcss/typography')],
-}
+};

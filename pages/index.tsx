@@ -1,5 +1,5 @@
-import Container from '../components/container'
-import Image from 'next/image'
+import Container from '../components/container';
+import Image from 'next/image';
 
 function HomePage() {
   return (
@@ -7,7 +7,7 @@ function HomePage() {
       <Container>
         <div className="space-y-6">
           <h1 className="text-2xl font-bold">
-            Hey, I'm a Senior Software Engineer at Company. I enjoy working with
+            Hey, I&apos;m a Senior Software Engineer at Company. I enjoy working with
             Next.js and crafting beautiful front-end experiences.
           </h1>
           <p>
@@ -29,7 +29,7 @@ function HomePage() {
         />
       </div>
     </>
-  )
+  );
 }
 
-export default HomePage
+export default HomePage;

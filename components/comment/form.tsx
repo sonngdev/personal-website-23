@@ -1,4 +1,4 @@
-import { useAuth0 } from '@auth0/auth0-react'
+import { useAuth0 } from '@auth0/auth0-react';
 
 type CommentFormProps = {
   text: string
@@ -11,7 +11,7 @@ export default function CommentForm({
   setText,
   onSubmit,
 }: CommentFormProps) {
-  const { isAuthenticated, logout, loginWithPopup } = useAuth0()
+  const { isAuthenticated, logout, loginWithPopup } = useAuth0();
 
   return (
     <form onSubmit={onSubmit}>
@@ -52,5 +52,5 @@ export default function CommentForm({
         )}
       </div>
     </form>
-  )
+  );
 }

@@ -1,6 +1,6 @@
-import type { Comment } from '../../interfaces'
-import distanceToNow from '../../lib/dateRelative'
-import { useAuth0 } from '@auth0/auth0-react'
+import type { Comment } from '../../interfaces';
+import distanceToNow from '../../lib/dateRelative';
+import { useAuth0 } from '@auth0/auth0-react';
 
 type CommentListProps = {
   comments?: Comment[]
@@ -8,15 +8,15 @@ type CommentListProps = {
 }
 
 export default function CommentList({ comments, onDelete }: CommentListProps) {
-  const { user } = useAuth0()
+  const { user } = useAuth0();
 
   return (
     <div className="space-y-6 mt-10">
       {comments &&
         comments.map((comment) => {
-          const isAuthor = user && user.sub === comment.user.sub
+          const isAuthor = user && user.sub === comment.user.sub;
           const isAdmin =
-            user && user.email === process.env.NEXT_PUBLIC_AUTH0_ADMIN_EMAIL
+            user && user.email === process.env.NEXT_PUBLIC_AUTH0_ADMIN_EMAIL;
 
           return (
             <div key={comment.created_at} className="flex space-x-4">
@@ -50,8 +50,8 @@ export default function CommentList({ comments, onDelete }: CommentListProps) {
                 <div>{comment.text}</div>
               </div>
             </div>
-          )
+          );
         })}
     </div>
-  )
+  );
 }

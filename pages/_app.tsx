@@ -1,11 +1,11 @@
-import 'tailwindcss/tailwind.css'
+import 'tailwindcss/tailwind.css';
 
-import type { AppProps } from 'next/app'
-import Head from 'next/head'
-import Header from '../components/header'
-import { Auth0Provider } from '@auth0/auth0-react'
+import type { AppProps } from 'next/app';
+import Head from 'next/head';
+import Header from '../components/header';
+import { Auth0Provider } from '@auth0/auth0-react';
 
-import 'prism-themes/rose-pine/prism-rose-pine-moon.css'
+import 'prism-themes/rose-pine/prism-rose-pine-moon.css';
 
 export default function MyApp({ Component, pageProps }: AppProps) {
   return (
@@ -28,5 +28,5 @@ export default function MyApp({ Component, pageProps }: AppProps) {
         <Component {...pageProps} />
       </main>
     </Auth0Provider>
-  )
+  );
 }

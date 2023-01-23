@@ -1,7 +1,7 @@
 ---
-title: "How to get Jest (and React Testing Library) up and running in Remix 🃏💿"
-excerpt: "If you are new to Remix and are trying to figure out how to set up Jest (and optionally React Testing Library), this guide can help you."
-date: "2022-06-12"
+title: 'How to get Jest (and React Testing Library) up and running in Remix 🃏💿'
+excerpt: 'If you are new to Remix and are trying to figure out how to set up Jest (and optionally React Testing Library), this guide can help you.'
+date: '2022-06-12'
 ---
 
 > I learn this while working on the Remix example for [Jest Preview](https://www.jest-preview.com/), which is a stellar library that lets you see your app UI while testing. Check it out at the official website.
@@ -16,7 +16,7 @@ If you are moving to **[Remix](https://remix.run/)**, you might have noticed th
 
 ## Install Jest
 
-First, install `jest` itself. If you are using `jest` version 28 or later, you must install `jest-environment-jsdom` too (according to their [migration guide](https://jestjs.io/docs/upgrading-to-jest28#jsdom)).  
+First, install `jest` itself. If you are using `jest` version 28 or later, you must install `jest-environment-jsdom` too (according to their [migration guide](https://jestjs.io/docs/upgrading-to-jest28#jsdom)).
 
 ```bash
 npm i -D jest jest-environment-jsdom
@@ -49,9 +49,7 @@ module.exports = {
     // https://jestjs.io/docs/configuration#transform-objectstring-pathtotransformer--pathtotransformer-object
     '^.+\\.(js|jsx|ts|tsx)$': 'babel-jest',
   },
-  transformIgnorePatterns: [
-    '/node_modules/',
-  ],
+  transformIgnorePatterns: ['/node_modules/'],
 };
 ```
 
@@ -82,8 +80,8 @@ Finally, add the familiar `test` NPM script to your `package.json` so that each 
 
 ```json
 {
-	"scripts": {
-		// ...
+  "scripts": {
+    // ...
     "test": "jest --watch"
   }
 }
@@ -114,19 +112,21 @@ import '@testing-library/jest-dom';
 ```jsx
 // app/__tests__/index.test.js
 
-import { render, screen } from '@testing-library/react'
-import Index from '../routes/index'
+import { render, screen } from '@testing-library/react';
+import Index from '../routes/index';
 
 it('should show welcome message', () => {
   render(<Index />);
 
-  expect(screen.getByRole('heading', { name: /welcome to remix/i })).toBeInTheDocument();
+  expect(
+    screen.getByRole('heading', { name: /welcome to remix/i }),
+  ).toBeInTheDocument();
 });
 ```
 
 ![It sure feels good to see the green](/post-assets/220612-test-passed.png)
 
-It sure feels good to see the green
+It sure feels good to see the green.
 
 ## Conclusion
 

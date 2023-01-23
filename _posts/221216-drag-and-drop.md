@@ -1,7 +1,7 @@
 ---
-title: "I finally tried HTML drag-and-drop after 4 years of coding"
-excerpt: "I implemented drag and drop for my project after a shockingly long time I managed to avoid it. Here is what I learned."
-date: "2022-12-16"
+title: 'I finally tried HTML drag-and-drop after 4 years of coding'
+excerpt: 'I implemented drag and drop for my project after a shockingly long time I managed to avoid it. Here is what I learned.'
+date: '2022-12-16'
 ---
 
 > This series of learnings occurred while I was building an Algorithm Visualizer app. This app is hosted on Netlify, you can check out my progress [here](https://algorithms.sonng.dev/). I might have a dedicated post for this project in the future.
@@ -40,11 +40,11 @@ In my case, it would be the starting and ending nodes, which were, of course, `d
 ```
 
 ```css
-.node[draggable="true"] {
+.node[draggable='true'] {
   cursor: grab;
 }
 
-.node[draggable="true"]:active {
+.node[draggable='true']:active {
   cursor: grabbing;
 }
 ```
@@ -54,7 +54,6 @@ In my case, it would be the starting and ending nodes, which were, of course, `d
 According to the [MDN doc](https://developer.mozilla.org/en-US/docs/Web/API/HTML_Drag_and_Drop_API#define_a_drop_zone), a drop zone must handle both the `dragover` and the `drop` events.
 
 > By default, the browser prevents anything from happening when dropping something onto most HTML elements. To change that behavior so that an element becomes a *drop zone* or is *droppable*, the element must have both [ondragover](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/dragover_event) and [ondrop](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/drop_event) event handler attributes.
->
 
 There is another gotcha: the handler for `dragover` needs to call the `preventDefault()` method of the `event` object, or else the `drop` event handler will never be called. If it had not been for [this Pluralsight guide](https://www.notion.so/I-finally-tried-HTML-drag-and-drop-after-4-years-of-coding-e91f5d808fbf472aae85217efa1a0745), I would have wasted so much more time on this one. 🙏
 
@@ -89,20 +88,20 @@ For basic drag and drop to work, only a draggable and a drop zone is enough. How
 ```tsx
 // JSX
 <div
-	className={`node ${isUnderDrag ? 'under-drag-start' : ''}`}
-	onDragEnter={handleDragEnter}
-	onDragLeave={handleDragLeave}
-/>
+  className={`node ${isUnderDrag ? 'under-drag-start' : ''}`}
+  onDragEnter={handleDragEnter}
+  onDragLeave={handleDragLeave}
+/>;
 
 // Logic
 const [isUnderDrag, setIsUnderDrag] = useState(false);
 
 const handleDragEnter = () => {
-	setIsUnderDrag(true);
+  setIsUnderDrag(true);
 };
 
 const handleDragLeave = () => {
-	setIsUnderDrag(false);
+  setIsUnderDrag(false);
 };
 ```
 
@@ -110,11 +109,11 @@ Note that depending on whether I was dragging the start node or the end node, th
 
 ```css
 .node {
-	background-color: #E6E6EA;
+  background-color: #e6e6ea;
 }
 
 .node.start {
-  background-color: #FE3E34;
+  background-color: #fe3e34;
 }
 
 .node.end {
@@ -122,11 +121,11 @@ Note that depending on whether I was dragging the start node or the end node, th
 }
 
 .node.under-drag-start {
-  background-color: #FF6F68;
+  background-color: #ff6f68;
 }
 
 .node.under-drag-end {
-  background-color: #88D8B0;
+  background-color: #88d8b0;
 }
 ```
 
@@ -141,7 +140,6 @@ Let’s review what we had until this point. There were 3 elements needed for th
 So I needed a way to manage the two states: the type of the draggable node, and the latest position of the normal node that was being dragged over (under the cursor). My first thought was to save these states to the `event.dataTransfer` object, because it was there for this exact purpose.
 
 > [DataTransfer](https://developer.mozilla.org/en-US/docs/Web/API/DataTransfer) objects include the drag event's state, such as the type of drag being done (like `copy` or `move`), the drag's data (one or more items), and the MIME type of each *drag item*. [DataTransfer](https://developer.mozilla.org/en-US/docs/Web/API/DataTransfer) objects also have methods to add or remove items to the drag's data.
->
 
 I assumed that this `dataTransfer` object would be accessible throughout the entire interaction from dragging to dropping, in other words, the data I saved from the `dragstart` event could be read and changed in the `dragenter`, `dragleave`, `dragover`, and `drop` events all the same. So I tried something like this:
 

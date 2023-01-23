@@ -8,7 +8,7 @@ export default function Header() {
   const { theme, toggleTheme } = useTheme();
 
   return (
-    <header className="py-6 sticky top-0 bg-rosePineDawn-surface/30 dark:bg-rosePine-base/30 backdrop-blur-md">
+    <header className="py-6 sticky top-0 bg-light/30 dark:bg-dark/30 backdrop-blur-md transition-colors">
       <Container>
         <nav className="flex justify-between items-center">
           <Link
@@ -32,7 +32,7 @@ export default function Header() {
               Blog
             </Link>
             <button
-              className="w-10 h-10 flex justify-center items-center rounded transition-colors hover:bg-rosePineDawn-highlightLow dark:hover:bg-rosePine-highlightHigh"
+              className="w-10 h-10 flex justify-center items-center rounded transition-colors hover:bg-dark/10 dark:hover:bg-light/10"
               onClick={toggleTheme}
             >
               <AnimatePresence mode="wait">

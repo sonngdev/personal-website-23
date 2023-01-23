@@ -7,16 +7,14 @@ interface ThemeState {
 }
 
 interface ThemeValue {
-  theme: Theme;
+  theme: Theme | null;
   toggleTheme: () => void;
 }
 
 const ThemeContext = createContext<ThemeValue | undefined>(undefined);
 
 export function ThemeProvider({ children }) {
-  const [state, setState] = useState<ThemeState>({
-    theme: 'light',
-  });
+  const [state, setState] = useState<ThemeState>({ theme: null });
 
   const toggleTheme = useCallback(() => {
     setState((oldState) => {
@@ -29,15 +27,9 @@ export function ThemeProvider({ children }) {
   }, []);
 
   useEffect(() => {
-    let currentTheme = localStorage.getItem('theme') as Theme;
-    if (!currentTheme) {
-      currentTheme = window.matchMedia('(prefers-color-scheme: dark)').matches
-        ? 'dark'
-        : 'light';
-    }
     setState((oldTheme) => ({
       ...oldTheme,
-      theme: currentTheme,
+      theme: localStorage.getItem('theme') as Theme,
     }));
   }, []);
 

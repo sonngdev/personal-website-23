@@ -21,6 +21,25 @@ export default function MyApp({ Component, pageProps }: AppProps) {
           content="Clone and deploy your own Next.js portfolio in minutes."
         />
         <title>My awesome blog</title>
+        {/**
+         * Using dangerouslySetInnerHTML so that quotes inside JS code
+         * are not escaped.
+         * @see https://github.com/vercel/next.js/issues/2006
+         */}
+        <script dangerouslySetInnerHTML={{ __html: `
+          let currentTheme = localStorage.getItem('theme');
+          if (currentTheme === 'dark') {
+            document.documentElement.classList.add('dark');
+          } else if (currentTheme === 'light') {
+            document.documentElement.classList.remove('dark');
+          } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            document.documentElement.classList.add('dark');
+            localStorage.setItem('theme', 'dark');
+          } else {
+            document.documentElement.classList.remove('dark');
+            localStorage.setItem('theme', 'light');
+          }
+        `}} />
       </Head>
 
       <ThemeProvider>

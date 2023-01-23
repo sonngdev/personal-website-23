@@ -4,6 +4,7 @@ import type { AppProps } from 'next/app';
 import Head from 'next/head';
 import Header from '../components/header';
 import { Auth0Provider } from '@auth0/auth0-react';
+import { ThemeProvider } from 'contexts/theme';
 
 import 'prism-themes/rose-pine/prism-rose-pine-moon.css';
 
@@ -22,11 +23,13 @@ export default function MyApp({ Component, pageProps }: AppProps) {
         <title>My awesome blog</title>
       </Head>
 
-      <Header />
+      <ThemeProvider>
+        <Header />
 
-      <main className="py-14">
-        <Component {...pageProps} />
-      </main>
+        <main className="py-14">
+          <Component {...pageProps} />
+        </main>
+      </ThemeProvider>
     </Auth0Provider>
   );
 }

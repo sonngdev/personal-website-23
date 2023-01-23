@@ -7,6 +7,7 @@ import Header from '../components/header';
 import { Auth0Provider } from '@auth0/auth0-react';
 import { ThemeProvider } from 'contexts/theme';
 
+
 export default function MyApp({ Component, pageProps }: AppProps) {
   return (
     <Auth0Provider
@@ -19,7 +20,14 @@ export default function MyApp({ Component, pageProps }: AppProps) {
           name="description"
           content="Clone and deploy your own Next.js portfolio in minutes."
         />
-        <title>My awesome blog</title>
+
+        <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png" />
+        <link rel="shortcut icon" type="image/x-icon" href="/favicon/favicon.ico" />
+        <link rel="manifest" href="/favicon/site.webmanifest" />
+
+        <title>Son Nguyen • Dev</title>
         {/**
          * Using dangerouslySetInnerHTML so that quotes inside JS code
          * are not escaped.

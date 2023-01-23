@@ -3,7 +3,7 @@ import Container from 'components/container';
 
 export default function Footer() {
   return (
-    <footer className="py-6">
+    <footer className="py-4">
       <Container>
         <div className="flex flex-col items-center gap-y-4 lg:flex-row lg:justify-between">
           <div className="flex gap-x-4 lg:order-2">

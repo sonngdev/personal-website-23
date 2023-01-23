@@ -10,7 +10,7 @@ export default function Header() {
   const router = useRouter();
 
   return (
-    <header className="py-6 sticky top-0 bg-light/30 dark:bg-dark/30 backdrop-blur-md transition-colors">
+    <header className="py-3 sticky top-0 bg-light/30 dark:bg-dark/30 backdrop-blur-md transition-colors">
       <Container>
         <nav className="flex justify-between items-center">
           <Link

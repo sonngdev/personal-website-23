@@ -20,7 +20,7 @@ export default function CommentForm({
         rows={2}
         placeholder={
           isAuthenticated
-            ? `What are your thoughts?`
+            ? 'What are your thoughts?'
             : 'Please login to leave a comment'
         }
         onChange={(e) => setText(e.target.value)}

@@ -1,4 +1,5 @@
-import { createContext, useCallback, useContext, useEffect, useState } from 'react';
+import { SoundManager } from 'lib/SoundManager';
+import { createContext, useContext, useEffect, useRef, useState } from 'react';
 
 type Theme = 'light' | 'dark';
 
@@ -11,26 +12,34 @@ interface ThemeValue {
   toggleTheme: () => void;
 }
 
+interface AudioRef {
+  switchOn: HTMLAudioElement | null;
+  switchOff: HTMLAudioElement | null;
+}
+
 const ThemeContext = createContext<ThemeValue | undefined>(undefined);
 
 export function ThemeProvider({ children }) {
   const [state, setState] = useState<ThemeState>({ theme: null });
+  const audioRef = useRef<AudioRef>({ switchOn: null, switchOff: null });
 
-  const toggleTheme = useCallback(() => {
-    setState((oldState) => {
-      if (oldState.theme === 'dark') {
-        return { ...oldState, theme: 'light' };
-      } else {
-        return { ...oldState, theme: 'dark' };
-      }
-    });
-  }, []);
+  const toggleTheme = () => {
+    if (state.theme === 'dark') {
+      setState({ ...state, theme: 'light' });
+      SoundManager.play(audioRef.current.switchOn);
+    } else {
+      setState({ ...state, theme: 'dark' });
+      SoundManager.play(audioRef.current.switchOff);
+    }
+  };
 
   useEffect(() => {
     setState((oldTheme) => ({
       ...oldTheme,
       theme: localStorage.getItem('theme') as Theme,
     }));
+    audioRef.current.switchOn = SoundManager.createSound('/sounds/switch-on.mp3');
+    audioRef.current.switchOff = SoundManager.createSound('/sounds/switch-off.mp3');
   }, []);
 
   useEffect(() => {

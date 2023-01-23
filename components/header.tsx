@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 import { AnimatePresence, motion } from 'framer-motion';
 import { Sun, Moon } from 'react-feather';
 import Container from 'components/container';
@@ -6,6 +7,7 @@ import { useTheme } from 'contexts/theme';
 
 export default function Header() {
   const { theme, toggleTheme } = useTheme();
+  const router = useRouter();
 
   return (
     <header className="py-6 sticky top-0 bg-light/30 dark:bg-dark/30 backdrop-blur-md transition-colors">
@@ -21,13 +23,13 @@ export default function Header() {
           <div className="flex space-x-4 items-center">
             <Link
               href="/projects"
-              className="no-underline opacity-50 hover:opacity-100 transition-opacity"
+              className={`no-underline ${router.pathname.startsWith('/projects') ? 'opacity-100' : 'opacity-50 hover:opacity-100 transition-opacity'}`}
             >
               Projects
             </Link>
             <Link
               href="/blog"
-              className="no-underline opacity-50 hover:opacity-100 transition-opacity"
+              className={`no-underline ${router.pathname.startsWith('/blog') ? 'opacity-100' : 'opacity-50 hover:opacity-100 transition-opacity'}`}
             >
               Blog
             </Link>

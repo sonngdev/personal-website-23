@@ -21,13 +21,13 @@ export default function Header() {
           <div className="flex space-x-4 items-center">
             <Link
               href="/projects"
-              className="no-underline opacity-50 hover:opacity-100"
+              className="no-underline opacity-50 hover:opacity-100 transition-opacity"
             >
               Projects
             </Link>
             <Link
               href="/blog"
-              className="no-underline opacity-50 hover:opacity-100"
+              className="no-underline opacity-50 hover:opacity-100 transition-opacity"
             >
               Blog
             </Link>

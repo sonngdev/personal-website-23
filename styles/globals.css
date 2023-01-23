@@ -8,5 +8,9 @@
   a {
     @apply underline;
     @apply underline-offset-2;
+    @apply decoration-gray-300;
+    @apply hover:decoration-dark;
+    @apply dark:decoration-gray-600;
+    @apply dark:hover:decoration-light;
   }
 }

@@ -1,5 +1,5 @@
 import 'styles/globals.css';
-import 'styles/rose-pine/prism-rose-pine-moon.css';
+import 'styles/rose-pine/prism-rose-pine-main.css';
 
 import type { AppProps } from 'next/app';
 import Head from 'next/head';

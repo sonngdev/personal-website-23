@@ -1,26 +1,21 @@
 import Link from 'next/link';
-import Image from 'next/image';
 import { AnimatePresence, motion } from 'framer-motion';
 import { Sun, Moon } from 'react-feather';
 import Container from 'components/container';
 import { useTheme } from 'contexts/theme';
-import logo from 'public/logo/logo.png';
 
 export default function Header() {
   const { theme, toggleTheme } = useTheme();
 
   return (
-    <header className="py-6">
+    <header className="py-6 sticky top-0 bg-rosePineDawn-surface/30 dark:bg-rosePine-base/30 backdrop-blur-md">
       <Container>
-        <nav className="flex justify-between">
+        <nav className="flex justify-between items-center">
           <Link
             href="/"
-            className="no-underline"
+            className="no-underline font-title font-semibold"
           >
-            <div className="flex space-x-3 items-center">
-              <Image src={logo} alt="Logo" width={36} />
-              <span className="font-title font-semibold">Son Nguyen</span>
-            </div>
+            Son Nguyen
           </Link>
 
           <div className="flex space-x-4 items-center">

@@ -1,33 +1,29 @@
 import Container from '../components/container';
 import Image from 'next/image';
+import logo from 'public/logo/logo.png';
 
 function HomePage() {
   return (
     <>
       <Container>
         <div className="space-y-6">
-          <h1 className="text-2xl font-bold">
-            Hey, I&apos;m a Senior Software Engineer at Company. I enjoy working with
-            Next.js and crafting beautiful front-end experiences.
-          </h1>
-          <p>
-            This portfolio is built with Next.js and a library called next-mdx.
-            It allows you to write Markdown and focus on the content of your
-            portfolio.
-          </p>
+          <Image src={logo} alt="Logo" className="mb-9 w-36" />
 
-          <p>Deploy your own in a few minutes.</p>
+          <h1 className="text-2xl font-bold">
+            Hi and welcome 👋
+          </h1>
+
+          <p>
+            {"I'm "}
+            <strong>Son Nguyen</strong>
+            {' - an ex-Front-End Engineer at '}
+            <a href="https://www.photostudy.co/" target="_blank" rel="noreferrer">
+              Got It, Inc
+            </a>
+            {" - a start-up based in Silicon Valley. Currently I'm doing a MSc in Digital Innovation at UCD, Ireland. This is where I share my own thoughts and experience of my journey in Software Engineering. I hope you find something to enjoy 🤗."}
+          </p>
         </div>
       </Container>
-
-      <div className="container max-w-4xl m-auto px-4 mt-20">
-        <Image
-          src="/desk.jpg"
-          alt="my desk"
-          width={1920 / 2}
-          height={1280 / 2}
-        />
-      </div>
     </>
   );
 }

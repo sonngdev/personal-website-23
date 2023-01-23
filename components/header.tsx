@@ -25,10 +25,16 @@ export default function Header() {
 
           <div className="flex space-x-4 items-center">
             <Link
+              href="/projects"
+              className="no-underline opacity-50 hover:opacity-100"
+            >
+              Projects
+            </Link>
+            <Link
               href="/posts"
               className="no-underline opacity-50 hover:opacity-100"
             >
-              Posts
+              Blog
             </Link>
             <button
               className="w-10 h-10 flex justify-center items-center rounded transition-colors hover:bg-rosePineDawn-highlightLow dark:hover:bg-rosePine-highlightHigh"

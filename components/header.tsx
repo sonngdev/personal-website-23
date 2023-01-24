@@ -66,7 +66,7 @@ export default function Header() {
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -10 }}
-                    key="dark-theme"
+                    key="system-theme"
                     className="flex justify-center items-center"
                   >
                     <Monitor size={16} />

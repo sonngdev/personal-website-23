@@ -1,25 +1,44 @@
 class SoundManager {
-  private registeredSounds: Record<string, HTMLAudioElement> = {};
+  private context: AudioContext | null = null;
+  private loadedSounds: Map<string, AudioBuffer> = new Map();
 
-  createSound(src: string): HTMLAudioElement {
-    if (!this.registeredSounds[src]) {
-      this.registeredSounds[src] = new Audio(src);
+  async loadSound(src: string): Promise<AudioBuffer> {
+    if (this.loadedSounds.has(src)) {
+      return this.loadedSounds.get(src) as AudioBuffer;
     }
-    return this.registeredSounds[src];
+
+    return new Promise((resolve, reject) => {
+      const request = new XMLHttpRequest();
+      request.open('GET', src, true);
+      request.responseType = 'arraybuffer';
+
+      request.addEventListener('load', () => {
+        if (!this.context) {
+          this.context = new AudioContext();
+        }
+        this.context.decodeAudioData(
+          request.response,
+          (buffer) => {
+            resolve(buffer);
+          },
+          (error) => {
+            reject(error);
+          },
+        );
+      });
+      request.send();
+    });
   }
 
-  play(sound: HTMLAudioElement) {
-    this.muteAll();
-    sound.play();
-  }
+  play(buffer: AudioBuffer) {
+    if (!this.context) {
+      this.context = new AudioContext();
+    }
 
-  mute(sound: HTMLAudioElement) {
-    sound.pause();
-    sound.currentTime = 0;
-  }
-
-  private muteAll() {
-    Object.values(this.registeredSounds).forEach(this.mute);
+    const source = this.context.createBufferSource();
+    source.buffer = buffer;
+    source.connect(this.context.destination);
+    source.start();
   }
 }
 

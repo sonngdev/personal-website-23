@@ -16,8 +16,8 @@ interface ThemeValue {
 }
 
 interface AudioRef {
-  switchOn: HTMLAudioElement | null;
-  switchOff: HTMLAudioElement | null;
+  switchOn: AudioBuffer | null;
+  switchOff: AudioBuffer | null;
 }
 
 const ThemeContext = createContext<ThemeValue | undefined>(undefined);
@@ -52,16 +52,20 @@ export function ThemeProvider({ children }) {
   };
 
   useEffect(() => {
+    SoundManager.loadSound('/sounds/switch-on.mp3').then((buffer) => {
+      audioRef.current.switchOn = buffer;
+    });
+    SoundManager.loadSound('/sounds/switch-off.mp3').then((buffer) => {
+      audioRef.current.switchOff = buffer;
+    });
+
     const theme = localStorage.getItem('theme') as DisplayTheme;
     const actualTheme = getActualTheme(theme);
-
     setState((oldState) => ({
       ...oldState,
       displayTheme: theme,
       actualTheme,
     }));
-    audioRef.current.switchOn = SoundManager.createSound('/sounds/switch-on.mp3');
-    audioRef.current.switchOff = SoundManager.createSound('/sounds/switch-off.mp3');
   }, []);
 
   useEffect(() => {

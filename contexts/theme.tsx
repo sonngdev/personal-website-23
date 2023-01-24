@@ -27,20 +27,6 @@ export function ThemeProvider({ children }) {
   const [state, setState] = useState<ThemeState>({ displayTheme: null, actualTheme: null });
   const audioRef = useRef<AudioRef>({ switchOn: null, switchOff: null });
 
-  const switchTheme = () => {
-    const currentIndex = DISPLAY_THEMES_ORDER.findIndex((theme) => theme === state.displayTheme);
-    const displayTheme = DISPLAY_THEMES_ORDER[(currentIndex + 1) % DISPLAY_THEMES_ORDER.length];
-    const actualTheme = getActualTheme(displayTheme);
-    setState({ ...state, displayTheme, actualTheme });
-
-    localStorage.setItem('theme', displayTheme);
-    if (actualTheme === 'light') {
-      SoundManager.play(audioRef.current.switchOn);
-    } else {
-      SoundManager.play(audioRef.current.switchOff);
-    }
-  };
-
   const getActualTheme = (displayTheme: DisplayTheme): ActualTheme => {
     if (displayTheme !== 'system') {
       return displayTheme;
@@ -49,6 +35,20 @@ export function ThemeProvider({ children }) {
       return 'dark';
     }
     return 'light';
+  };
+
+  const switchTheme = () => {
+    const currentIndex = DISPLAY_THEMES_ORDER.findIndex((theme) => theme === state.displayTheme);
+    const displayTheme = DISPLAY_THEMES_ORDER[(currentIndex + 1) % DISPLAY_THEMES_ORDER.length];
+    const actualTheme = getActualTheme(displayTheme);
+    setState({ ...state, displayTheme, actualTheme });
+
+    localStorage.setItem('theme', displayTheme);
+    if (actualTheme === 'light' && audioRef.current.switchOn) {
+      SoundManager.play(audioRef.current.switchOn);
+    } else if (audioRef.current.switchOff) {
+      SoundManager.play(audioRef.current.switchOff);
+    }
   };
 
   useEffect(() => {

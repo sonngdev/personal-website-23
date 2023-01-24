@@ -36,6 +36,7 @@ export default function Header() {
             <button
               className="w-10 h-10 flex justify-center items-center rounded transition-colors hover:bg-dark/10 dark:hover:bg-light/10"
               onClick={switchTheme}
+              aria-label="Switch theme"
             >
               <AnimatePresence mode="wait">
                 {displayTheme === 'light' && (

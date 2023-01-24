@@ -14,7 +14,7 @@ export default function ProjectCard(props: ProjectCardProps) {
   const { img, title, description, technologies, projectUrl, githubUrl } = props;
 
   return (
-    <div className="rounded-md overflow-hidden border border-gray-300 hover:border-gray-400 transition-colors flex flex-col">
+    <div className="rounded-md overflow-hidden border border-gray-300 dark:border-gray-600 hover:border-gray-400 dark:hover:border-gray-500 transition-colors flex flex-col">
       <Image
         src={img}
         alt="ChatGPT With Voice"

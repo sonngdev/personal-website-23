@@ -33,7 +33,7 @@ export default function PostPage({
                 <p className="mt-2 text-xl">{post.excerpt}</p>
               ) : null}
               <time className="flex mt-2 text-gray-400">
-                {distanceToNow(new Date(post.date))}
+                {distanceToNow(post.date ? new Date(post.date) : new Date())}
               </time>
             </header>
 

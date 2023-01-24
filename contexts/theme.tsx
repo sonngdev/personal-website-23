@@ -2,17 +2,17 @@ import Head from 'next/head';
 import { createContext, useContext, useEffect, useRef, useState } from 'react';
 import { SoundManager } from 'lib/SoundManager';
 
-type Theme = 'light' | 'dark' | 'system';
+type DisplayTheme = 'light' | 'dark' | 'system';
 type ActualTheme = 'light' | 'dark';
 
 interface ThemeState {
-  theme: Theme | null;
+  displayTheme: DisplayTheme | null;
   actualTheme: ActualTheme | null;
 }
 
 interface ThemeValue {
-  theme: Theme | null;
-  toggleTheme: () => void;
+  displayTheme: DisplayTheme | null;
+  switchTheme: () => void;
 }
 
 interface AudioRef {
@@ -23,17 +23,17 @@ interface AudioRef {
 const ThemeContext = createContext<ThemeValue | undefined>(undefined);
 
 export function ThemeProvider({ children }) {
-  const THEMES_ORDER: Theme[] = ['light', 'dark', 'system'];
-  const [state, setState] = useState<ThemeState>({ theme: null, actualTheme: null });
+  const DISPLAY_THEMES_ORDER: DisplayTheme[] = ['light', 'dark', 'system'];
+  const [state, setState] = useState<ThemeState>({ displayTheme: null, actualTheme: null });
   const audioRef = useRef<AudioRef>({ switchOn: null, switchOff: null });
 
-  const toggleTheme = () => {
-    const currentIndex = THEMES_ORDER.findIndex((theme) => theme === state.theme);
-    const nextTheme = THEMES_ORDER[(currentIndex + 1) % THEMES_ORDER.length];
-    const actualTheme = getActualTheme(nextTheme);
-    setState({ ...state, theme: nextTheme, actualTheme });
+  const switchTheme = () => {
+    const currentIndex = DISPLAY_THEMES_ORDER.findIndex((theme) => theme === state.displayTheme);
+    const displayTheme = DISPLAY_THEMES_ORDER[(currentIndex + 1) % DISPLAY_THEMES_ORDER.length];
+    const actualTheme = getActualTheme(displayTheme);
+    setState({ ...state, displayTheme, actualTheme });
 
-    localStorage.setItem('theme', nextTheme);
+    localStorage.setItem('theme', displayTheme);
     if (actualTheme === 'light') {
       SoundManager.play(audioRef.current.switchOn);
     } else {
@@ -41,9 +41,9 @@ export function ThemeProvider({ children }) {
     }
   };
 
-  const getActualTheme = (theme: Theme): ActualTheme => {
-    if (theme !== 'system') {
-      return theme;
+  const getActualTheme = (displayTheme: DisplayTheme): ActualTheme => {
+    if (displayTheme !== 'system') {
+      return displayTheme;
     }
     if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
       return 'dark';
@@ -52,12 +52,12 @@ export function ThemeProvider({ children }) {
   };
 
   useEffect(() => {
-    const theme = localStorage.getItem('theme') as Theme;
+    const theme = localStorage.getItem('theme') as DisplayTheme;
     const actualTheme = getActualTheme(theme);
 
-    setState((oldTheme) => ({
-      ...oldTheme,
-      theme,
+    setState((oldState) => ({
+      ...oldState,
+      displayTheme: theme,
       actualTheme,
     }));
     audioRef.current.switchOn = SoundManager.createSound('/sounds/switch-on.mp3');
@@ -67,7 +67,7 @@ export function ThemeProvider({ children }) {
   useEffect(() => {
     const systemThemeQuery = window.matchMedia('(prefers-color-scheme: dark)');
     const detectSystemThemeChange = (event: MediaQueryListEvent) => {
-      if (state.theme === 'system') {
+      if (state.displayTheme === 'system') {
         setState((oldState) => ({
           ...oldState,
           actualTheme: event.matches ? 'dark' : 'light',
@@ -78,7 +78,7 @@ export function ThemeProvider({ children }) {
     return () => {
       systemThemeQuery.removeEventListener('change', detectSystemThemeChange);
     };
-  }, [state.theme]);
+  }, [state.displayTheme]);
 
   useEffect(() => {
     if (state.actualTheme === 'light') {
@@ -89,8 +89,8 @@ export function ThemeProvider({ children }) {
   }, [state.actualTheme]);
 
   const value = {
-    theme: state.theme,
-    toggleTheme,
+    displayTheme: state.displayTheme,
+    switchTheme,
   };
 
   return (

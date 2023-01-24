@@ -6,7 +6,7 @@ import Container from 'components/container';
 import { useTheme } from 'contexts/theme';
 
 export default function Header() {
-  const { theme, toggleTheme } = useTheme();
+  const { displayTheme, switchTheme } = useTheme();
   const router = useRouter();
 
   return (
@@ -35,10 +35,10 @@ export default function Header() {
             </Link>
             <button
               className="w-10 h-10 flex justify-center items-center rounded transition-colors hover:bg-dark/10 dark:hover:bg-light/10"
-              onClick={toggleTheme}
+              onClick={switchTheme}
             >
               <AnimatePresence mode="wait">
-                {theme === 'light' && (
+                {displayTheme === 'light' && (
                   <motion.div
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -49,7 +49,7 @@ export default function Header() {
                     <Sun size={16} />
                   </motion.div>
                 )}
-                {theme === 'dark' && (
+                {displayTheme === 'dark' && (
                   <motion.div
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -60,7 +60,7 @@ export default function Header() {
                     <Moon size={16} />
                   </motion.div>
                 )}
-                {theme === 'system' && (
+                {displayTheme === 'system' && (
                   <motion.div
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}

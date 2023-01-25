@@ -55,7 +55,7 @@ According to the [MDN doc](https://developer.mozilla.org/en-US/docs/Web/API/HTML
 
 > By default, the browser prevents anything from happening when dropping something onto most HTML elements. To change that behavior so that an element becomes a *drop zone* or is *droppable*, the element must have both [ondragover](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/dragover_event) and [ondrop](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/drop_event) event handler attributes.
 
-There is another gotcha: the handler for `dragover` needs to call the `preventDefault()` method of the `event` object, or else the `drop` event handler will never be called. If it had not been for [this Pluralsight guide](https://www.notion.so/I-finally-tried-HTML-drag-and-drop-after-4-years-of-coding-e91f5d808fbf472aae85217efa1a0745), I would have wasted so much more time on this one. 🙏
+There is another gotcha: the handler for `dragover` needs to call the `preventDefault()` method of the `event` object, or else the `drop` event handler will never be called. If it had not been for [this Pluralsight guide](https://www.pluralsight.com/guides/drag-and-drop-react-components#:~:text=The%20default%20drag%20over%20behavior%20of%20an%20element%20is%20to%20disable%20dropping%2C%20so%20in%20order%20to%20allow%20dropping%20the%20handler%20needs%20to%20prevent%20this%20default%20behavior%20by%20calling%20event.preventDefault().%20Drop%20will%20now%20be%20enabled%20on%20the%20component.), I would have wasted so much more time on this one. 🙏
 
 The drop zone of my app was the grid that contained all nodes.
 

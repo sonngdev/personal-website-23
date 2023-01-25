@@ -1,7 +1,8 @@
+import Head from 'next/head';
 import Container from 'components/container';
+import ProjectCard from 'components/project-card';
 import algorithmsVisualizerImg from 'public/projects-assets/algorithms-visualizer.png';
 import chatgptVoiceImg from 'public/projects-assets/chatgpt-with-voice.png';
-import ProjectCard from 'components/project-card';
 
 const PROJECTS = [
   {
@@ -28,6 +29,10 @@ export default function Projects() {
 
   return (
     <Container>
+      <Head>
+        <title>Son Nguyen • Projects</title>
+      </Head>
+
       <div className="grid gap-y-10">
         {projects.map((project) => (
           <ProjectCard key={project.title} {...project} />

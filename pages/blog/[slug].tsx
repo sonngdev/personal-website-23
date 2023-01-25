@@ -19,7 +19,11 @@ export default function PostPage({
   return (
     <Container>
       <Head>
-        <title>{post.title} @ Son Nguyen • Blog</title>
+        {/**
+         * Beware of "title has more than 1 children" error
+         * @see https://github.com/vercel/next.js/discussions/38256
+         */}
+        <title>{`${post.title} @ Son Nguyen • Blog`}</title>
       </Head>
 
       {router.isFallback ? (

@@ -1,13 +1,14 @@
 class SoundManager {
   private context: AudioContext | null = null;
-  private loadedSounds: Map<string, AudioBuffer> = new Map();
+  private loadedSounds: Record<string, AudioBuffer> = {};
 
-  async loadSound(src: string): Promise<AudioBuffer> {
-    if (this.loadedSounds.has(src)) {
-      return this.loadedSounds.get(src) as AudioBuffer;
-    }
-
+  loadSound(src: string): Promise<AudioBuffer> {
     return new Promise((resolve, reject) => {
+      if (this.loadedSounds[src]) {
+        resolve(this.loadedSounds[src]);
+        return;
+      }
+
       const request = new XMLHttpRequest();
       request.open('GET', src, true);
       request.responseType = 'arraybuffer';
@@ -19,6 +20,7 @@ class SoundManager {
         this.context.decodeAudioData(
           request.response,
           (buffer) => {
+            this.loadedSounds[src] = buffer;
             resolve(buffer);
           },
           (error) => {

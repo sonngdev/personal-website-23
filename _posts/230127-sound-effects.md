@@ -1,6 +1,6 @@
 ---
 title: 'How to play sprite sound effects on the web, the right way'
-excerpt: 'Adding sound effects can make your website more delightful to interact with. Recently I learned iOS can handle sound in an unexpected way and I had to change how I implemented this feature.'
+excerpt: 'Adding sound effects can make your website more delightful to interact with. Recently I learned iOS could handle sound in an unexpected way and I had to change how I implemented this feature.'
 date: '2023-01-27'
 ---
 

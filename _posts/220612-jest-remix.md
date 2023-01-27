@@ -10,9 +10,7 @@ Having been working with React for a while, you have probably heard about or use
 
 If you are moving to **[Remix](https://remix.run/)**, you might have noticed that their “official” templates (Blues, Indie, and Grunge) all use Vitest as the default test framework. While Vitest is growing in popularity, maybe you just want to stick with Jest for the time being due to its familiarity. This guide will show you how to do just that.
 
-<aside>
 🃏 Please keep in mind that this guide assumes a Remix app created with `create-remix` with no testing framework installed.
-</aside>
 
 ## Install Jest
 

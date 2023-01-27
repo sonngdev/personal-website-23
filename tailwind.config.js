@@ -19,7 +19,6 @@ module.exports = {
       },
       fontFamily: {
         sans: ['Barlow', 'sans-serif'],
-        title: ['Inter', 'sans-serif'],
       }
     }
   },

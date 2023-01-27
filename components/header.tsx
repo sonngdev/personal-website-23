@@ -15,7 +15,7 @@ export default function Header() {
         <nav className="flex justify-between items-center">
           <Link
             href="/"
-            className="no-underline font-title font-semibold"
+            className="no-underline font-bold"
           >
             Son Nguyen
           </Link>

@@ -1,5 +1,5 @@
 import type { Comment } from '../../interfaces';
-import distanceToNow from '../../lib/dateRelative';
+import { distanceToNow } from '../../lib/time';
 import { useAuth0 } from '@auth0/auth0-react';
 
 type CommentListProps = {

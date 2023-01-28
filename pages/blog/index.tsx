@@ -2,7 +2,7 @@ import type { InferGetStaticPropsType } from 'next';
 import Head from 'next/head';
 import Link from 'next/link';
 import Container from '../../components/container';
-import distanceToNow from '../../lib/dateRelative';
+import { formatDate } from '../../lib/time';
 import { getAllPosts } from '../../lib/getPost';
 
 export default function NotePage({
@@ -26,7 +26,7 @@ export default function NotePage({
             </Link>
             <p>{post.excerpt}</p>
             <div className="text-gray-400">
-              <time>{distanceToNow(post.date ? new Date(post.date) : new Date())}</time>
+              <time>{formatDate(post.date ? new Date(post.date) : new Date())}</time>
             </div>
           </article>
         ))

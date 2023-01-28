@@ -3,7 +3,7 @@ import { useRouter } from 'next/router';
 import ErrorPage from 'next/error';
 import Head from 'next/head';
 import Container from 'components/container';
-import distanceToNow from 'lib/dateRelative';
+import { formatDate } from 'lib/time';
 import { getAllPosts, getPostBySlug } from 'lib/getPost';
 import markdownToHtml from 'lib/markdownToHtml';
 
@@ -37,7 +37,7 @@ export default function PostPage({
                 <p className="mt-2 text-xl">{post.excerpt}</p>
               ) : null}
               <time className="flex mt-2 text-gray-400">
-                {distanceToNow(post.date ? new Date(post.date) : new Date())}
+                {formatDate(post.date ? new Date(post.date) : new Date())}
               </time>
             </header>
 

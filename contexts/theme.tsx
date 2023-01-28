@@ -46,7 +46,7 @@ export function ThemeProvider({ children }) {
     localStorage.setItem('theme', displayTheme);
     if (actualTheme === 'light' && audioRef.current.switchOn) {
       SoundManager.play(audioRef.current.switchOn);
-    } else if (audioRef.current.switchOff) {
+    } else if (actualTheme === 'dark' && audioRef.current.switchOff) {
       SoundManager.play(audioRef.current.switchOff);
     }
   };

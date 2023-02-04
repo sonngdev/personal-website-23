@@ -26,7 +26,7 @@ My VM size is `B2s`, which provides 2 vCPU and 4 GiB of RAM. This size is powerf
 
 ## Step 2: Installing Ubuntu Desktop on the VM
 
-This excellent YouTube shows all the steps needed to have Ubuntu Desktop running on the newly created VM. Note that being able to SSH into it is a prerequisite. Read [the Microsoft guide](https://learn.microsoft.com/en-us/azure/virtual-machines/linux/quick-create-portal?tabs=ubuntu#connect-to-virtual-machine) again if you are not sure how to do that.
+This excellent YouTube video shows all the steps needed to have Ubuntu Desktop running on the newly created VM. Note that being able to SSH into it is a prerequisite. Read [the Microsoft guide](https://learn.microsoft.com/en-us/azure/virtual-machines/linux/quick-create-portal?tabs=ubuntu#connect-to-virtual-machine) again if you are not sure how to do that.
 
 <iframe style="width:100%;aspect-ratio:16/9;" src="https://www.youtube.com/embed/ODhGNe0s4lI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 

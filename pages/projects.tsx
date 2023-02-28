@@ -1,10 +1,18 @@
 import Head from 'next/head';
 import Container from 'components/container';
 import ProjectCard from 'components/project-card';
+import freeCodeCampImg from 'public/projects-assets/free-code-camp.png';
 import algorithmsVisualizerImg from 'public/projects-assets/algorithms-visualizer.png';
 import chatgptVoiceImg from 'public/projects-assets/chatgpt-with-voice.png';
 
 const PROJECTS = [
+  {
+    img: freeCodeCampImg,
+    title: 'freeCodeCamp Projects',
+    description: 'A collection of projects I did back in 2017, to learn programming and complete the freeCodeCamp Frontend Certificate.',
+    technologies: 'HTML, CSS, JavaScript, jQuery, ES6.',
+    projectUrl: 'https://codepen.io/collection/kNZGjG',
+  },
   {
     img: algorithmsVisualizerImg,
     title: 'Algorithms Visualizer',

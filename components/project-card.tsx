@@ -7,7 +7,7 @@ interface ProjectCardProps {
   description: string;
   technologies: string;
   projectUrl: string;
-  githubUrl: string;
+  githubUrl?: string;
 }
 
 export default function ProjectCard(props: ProjectCardProps) {
@@ -36,14 +36,16 @@ export default function ProjectCard(props: ProjectCardProps) {
 
         <div className="flex justify-between mt-8">
           <a className="flex gap-x-1 items-center" target="_blank" rel="noreferrer" href={projectUrl}>
-            <span>Learn more </span>
+            <span>Check out </span>
             <ArrowRight size={16} />
           </a>
 
-          <a className="flex gap-x-1 items-center" target="_blank" rel="noreferrer" href={githubUrl}>
-            <ExternalLink size={16} />
-            <span>GitHub</span>
-          </a>
+          {githubUrl && (
+            <a className="flex gap-x-1 items-center" target="_blank" rel="noreferrer" href={githubUrl}>
+              <ExternalLink size={16} />
+              <span>GitHub</span>
+            </a>
+          )}
         </div>
       </div>
     </div>

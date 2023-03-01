@@ -15,11 +15,13 @@ export default function ProjectCard(props: ProjectCardProps) {
 
   return (
     <div className="rounded-md overflow-hidden border border-gray-300 dark:border-gray-600 hover:border-gray-400 dark:hover:border-gray-500 transition-colors flex flex-col">
-      <Image
-        src={img}
-        alt="ChatGPT With Voice"
-        className="object-cover aspect-video"
-      />
+      <a target="_blank" rel="noreferrer" href={projectUrl}>
+        <Image
+          src={img}
+          alt="ChatGPT With Voice"
+          className="object-cover aspect-video"
+        />
+      </a>
 
       <div className="px-4 py-6 flex-1 flex flex-col">
         <div className="flex-1">

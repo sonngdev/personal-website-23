@@ -50,7 +50,7 @@ const READINGS = [
     title: 'Test Driven Development: By Example',
     author: 'Kent Beck',
     publicationYear: '2002',
-    description: 'This book follows two TDD projects from start to finish, illustrating techniques programmers can use to easily and dramatically increase the quality of their work.',
+    description: 'TDD techniques programmers can use to easily and dramatically increase the quality of their work.',
     url: 'https://www.oreilly.com/library/view/test-driven-development/0321146530/',
   },
   {
@@ -58,7 +58,7 @@ const READINGS = [
     title: 'The Senior Software Engineer',
     author: 'David B. Copeland',
     publicationYear: '2013',
-    description: '11 Practices of an Effective Technical Leader',
+    description: '11 Practices of an Effective Technical Leader.',
     url: 'https://www.theseniorsoftwareengineer.com/',
   },
   {
@@ -66,7 +66,7 @@ const READINGS = [
     title: 'Design Patterns: Elements of Reusable Object-Oriented Software',
     author: 'Erich Gamma, Richard Helm, Ralph Johnson, John Vlissides',
     publicationYear: '1994',
-    description: 'Capturing a wealth of experience about the design of object-oriented software, four top-notch designers present a catalog of simple and succinct solutions to commonly occurring design problems.',
+    description: 'The foundational book about design patterns by the Gang of Four.',
     url: 'https://www.oreilly.com/library/view/design-patterns-elements/0201633612/',
   },
   {
@@ -82,7 +82,7 @@ const READINGS = [
     title: 'Computer Networking: A Top-Down Approach',
     author: 'James F. Kurose, AmherstKeith Ross',
     publicationYear: '2020',
-    description: 'Computer Networking builds on the authors\' long tradition of teaching this complex subject through a layered approach in a "top-down manner".',
+    description: 'This book teaches the complex subject of computer networking through a layered approach, in a top-down manner.',
     url: 'https://www.pearson.com/en-us/subject-catalog/p/computer-networking/P200000003334/9780135928615',
   },
 ];

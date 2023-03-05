@@ -14,7 +14,7 @@ export default function ReadingItem(props: ReadingItemProps) {
   const { thumbnail, title, author, publicationYear, description, url } = props;
 
   return (
-    <div className="flex gap-x-4">
+    <div className="flex flex-col lg:flex-row gap-4">
       <Image
         src={thumbnail}
         alt="ChatGPT With Voice"
@@ -29,7 +29,7 @@ export default function ReadingItem(props: ReadingItemProps) {
         </div>
         <p className="mt-2 flex-1">{description}</p>
 
-        <a className="flex gap-x-1 items-center w-fit" target="_blank" rel="noreferrer" href={url}>
+        <a className="flex gap-x-1 items-center w-fit mt-4 lg:mt-0" target="_blank" rel="noreferrer" href={url}>
           <ExternalLink size={16} />
           <span>Learn more</span>
         </a>

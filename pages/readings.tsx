@@ -1,7 +1,7 @@
 import Head from 'next/head';
-import Image from 'next/image';
 import Container from 'components/container';
-import { ExternalLink } from 'react-feather';
+import ReadingItem from 'components/reading-item';
+
 import ydkjsImg from 'public/readings-assets/you-dont-know-js.jpg';
 import ejImg from 'public/readings-assets/eloquent-javascript.jpg';
 import ljdpImg from 'public/readings-assets/learning-javascript-design-patterns.jpg';
@@ -98,28 +98,8 @@ export default function Readings() {
       </Head>
 
       <div className="grid gap-y-10">
-        {readings.map(({ thumbnail, title, author, publicationYear, description, url }) => (
-          <div key={title} className="flex gap-x-4">
-            <Image
-              src={thumbnail}
-              alt="ChatGPT With Voice"
-              className="w-32"
-            />
-            <div className="flex flex-col">
-              <div className="text-lg leading-6 font-bold">
-                {title}
-              </div>
-              <div className="text-gray-400">
-                {`${author} (${publicationYear})`}
-              </div>
-              <p className="mt-2 flex-1">{description}</p>
-
-              <a className="flex gap-x-1 items-center w-fit" target="_blank" rel="noreferrer" href={url}>
-                <ExternalLink size={16} />
-                <span>Learn more</span>
-              </a>
-            </div>
-          </div>
+        {readings.map((reading) => (
+          <ReadingItem key={reading.title} {...reading} />
         ))}
       </div>
     </Container>

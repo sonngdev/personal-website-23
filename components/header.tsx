@@ -22,6 +22,12 @@ export default function Header() {
 
           <div className="flex space-x-4 items-center">
             <Link
+              href="/readings"
+              className={`no-underline ${router.pathname.startsWith('/readings') ? 'opacity-100' : 'opacity-50 hover:opacity-100 transition-opacity'}`}
+            >
+              Readings
+            </Link>
+            <Link
               href="/projects"
               className={`no-underline ${router.pathname.startsWith('/projects') ? 'opacity-100' : 'opacity-50 hover:opacity-100 transition-opacity'}`}
             >

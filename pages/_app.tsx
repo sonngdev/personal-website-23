@@ -29,25 +29,6 @@ export default function MyApp({ Component, pageProps }: AppProps) {
         <link rel="manifest" href="/favicon/site.webmanifest" />
 
         <title>Son Nguyen • Dev</title>
-        {/**
-         * Using dangerouslySetInnerHTML so that quotes inside JS code
-         * are not escaped.
-         * @see https://github.com/vercel/next.js/issues/2006
-         */}
-        <script dangerouslySetInnerHTML={{ __html: `
-          let currentTheme = localStorage.getItem('theme');
-          if (currentTheme === 'dark') {
-            document.documentElement.classList.add('dark');
-          } else if (currentTheme === 'light') {
-            document.documentElement.classList.remove('dark');
-          } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-            document.documentElement.classList.add('dark');
-            localStorage.setItem('theme', 'system');
-          } else {
-            document.documentElement.classList.remove('dark');
-            localStorage.setItem('theme', 'system');
-          }
-        `}} />
       </Head>
 
       <ThemeProvider>

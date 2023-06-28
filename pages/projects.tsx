@@ -9,14 +9,14 @@ const PROJECTS = [
   {
     img: freeCodeCampImg,
     title: 'freeCodeCamp Projects',
-    description: 'A collection of projects I did back in 2017, to learn programming and complete the freeCodeCamp Frontend Certificate.',
+    description: 'A collection of projects I did back in 2017 to learn programming and complete the freeCodeCamp Frontend Certificate.',
     technologies: 'HTML, CSS, JavaScript, jQuery, ES6.',
     projectUrl: 'https://codepen.io/collection/kNZGjG',
   },
   {
     img: algorithmsVisualizerImg,
     title: 'Algorithms Visualizer',
-    description: 'A neat website that visualizes common pathfinding algorithms.',
+    description: 'Visualization of common pathfinding algorithms.',
     technologies: 'React, TypeScript, Vite, Immer, Netlify.',
     projectUrl: 'https://algorithms.sonng.dev',
     githubUrl: 'https://github.com/thanhsonng/algorithm-visualizer',
@@ -24,7 +24,7 @@ const PROJECTS = [
   {
     img: chatgptVoiceImg,
     title: 'ChatGPT With Voice',
-    description: 'A small app that allows you to talk to ChatGPT about, well, anything.',
+    description: 'Have a casual conversation with ChatGPT with this pretty voice interface.',
     technologies: 'ChatGPT, Web Speech Synthesis API, Tailwind CSS, Azure Cloud, Nginx.',
     projectUrl: 'https://chatgpt.sonng.dev',
     githubUrl: 'https://github.com/thanhsonng/chatgpt-voice',

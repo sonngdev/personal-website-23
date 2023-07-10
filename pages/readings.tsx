@@ -11,6 +11,7 @@ import tsseImg from 'public/readings-assets/the-senior-software-engineer.jpg';
 import dpImg from 'public/readings-assets/design-patterns.jpg';
 import dsaaipImg from 'public/readings-assets/data-structures-and-algorithms-in-python.jpg';
 import cnatdaImg from 'public/readings-assets/computer-networking-a-top-down-approach.jpg';
+import homlImg from 'public/readings-assets/hands-on-machine-learning.jpg';
 
 const READINGS = [
   {
@@ -84,6 +85,14 @@ const READINGS = [
     publicationYear: '2020',
     description: 'This book teaches the complex subject of computer networking through a layered approach, in a top-down manner.',
     url: 'https://www.pearson.com/en-us/subject-catalog/p/computer-networking/P200000003334/9780135928615',
+  },
+  {
+    thumbnail: homlImg,
+    title: 'Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow',
+    author: 'Aurélien Géron',
+    publicationYear: '2019',
+    description: 'A comprehensive guide to understanding and implementing machine learning techniques using popular Python libraries.',
+    url: 'https://www.oreilly.com/library/view/hands-on-machine-learning/9781492032632/',
   },
 ];
 

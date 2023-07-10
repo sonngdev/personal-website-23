@@ -12,11 +12,11 @@ function HomePage() {
           <p>
             {"I'm "}
             <strong>Son Nguyen</strong>
-            {' - an ex-Front-End Engineer at '}
+            {' - a former Front-End Engineer at '}
             <a href="https://www.photostudy.co/" target="_blank" rel="noreferrer">
               Got It, Inc
             </a>
-            {" - a start-up based in Silicon Valley. Currently I'm doing a MSc in Digital Innovation at UCD, Ireland. This is where I share my own thoughts and experience of my journey in Software Engineering. I hope you find something to enjoy 🤗."}
+            {' - a start-up based in Silicon Valley. Currently I am pursuing an MSc in Digital Innovation at UCD, Ireland. This is where I share my own thoughts and experience of my journey in Software Engineering. I hope you find something to enjoy 🤗.'}
           </p>
 
           <p>

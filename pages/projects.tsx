@@ -16,7 +16,7 @@ const PROJECTS = [
   {
     img: algorithmsVisualizerImg,
     title: 'Algorithms Visualizer',
-    description: 'Visualization of common pathfinding algorithms.',
+    description: 'See the most common pathfinding algorithms in action.',
     technologies: 'React, TypeScript, Vite, Immer, Netlify.',
     projectUrl: 'https://algorithms.sonng.dev',
     githubUrl: 'https://github.com/thanhsonng/algorithm-visualizer',
@@ -24,7 +24,7 @@ const PROJECTS = [
   {
     img: chatgptVoiceImg,
     title: 'ChatGPT With Voice',
-    description: 'Have a casual conversation with ChatGPT with this pretty voice interface.',
+    description: 'Have a casual conversation with ChatGPT through this pretty voice interface.',
     technologies: 'ChatGPT, Web Speech Synthesis API, Tailwind CSS, Azure Cloud, Nginx.',
     projectUrl: 'https://chatgpt.sonng.dev',
     githubUrl: 'https://github.com/thanhsonng/chatgpt-voice',

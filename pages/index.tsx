@@ -12,11 +12,19 @@ function HomePage() {
           <p>
             {"I'm "}
             <strong>Son Nguyen</strong>
-            {' - a former Front-End Engineer at '}
+            {' - I work as a Software Engineer at '}
+            <a href="https://www.microsoft.com/en-ie/" target="_blank" rel="noreferrer">
+              Microsoft
+            </a>
+            {'. Formerly, I was a Front-End Engineer at '}
             <a href="https://www.photostudy.co/" target="_blank" rel="noreferrer">
               Got It, Inc
             </a>
-            {' - a start-up based in Silicon Valley. Currently I am pursuing an MSc in Digital Innovation at UCD, Ireland. This is where I share my own thoughts and experience of my journey in Software Engineering. I hope you find something to enjoy 🤗.'}
+            {'. I believe in good software products, which necessarily provide great values to users and come with sound user experience.'}
+          </p>
+
+          <p>
+            {'This is where I share my own thoughts and experience of my journey in Software Engineering. I hope you find something to enjoy 🤗.'}
           </p>
 
           <p>

@@ -19,7 +19,7 @@ const PROJECTS = [
     description: 'See the most common pathfinding algorithms in action.',
     technologies: 'React, TypeScript, Vite, Immer, Netlify.',
     projectUrl: 'https://algorithms.sonng.dev',
-    githubUrl: 'https://github.com/thanhsonng/algorithm-visualizer',
+    githubUrl: 'https://github.com/sonngdev/algorithm-visualizer',
   },
   {
     img: chatgptVoiceImg,
@@ -27,7 +27,7 @@ const PROJECTS = [
     description: 'Have a casual conversation with ChatGPT through this pretty voice interface.',
     technologies: 'ChatGPT, Web Speech Synthesis API, Tailwind CSS, Azure Cloud, Nginx.',
     projectUrl: 'https://chatgpt.sonng.dev',
-    githubUrl: 'https://github.com/thanhsonng/chatgpt-voice',
+    githubUrl: 'https://github.com/sonngdev/chatgpt-voice',
   },
 ];
 

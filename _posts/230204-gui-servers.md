@@ -6,7 +6,7 @@ date: '2023-02-04'
 
 "Interesting,", I hear you say, "why would you need a web server with Graphical User Interface (GUI)?". My friends, let me tell you a story about how I built [ChatGPT With Voice](https://chatgpt.sonng.dev/).
 
-In the first published version, ChatGPT With Voice came with only a frontend client. If you wanted it to work, you had to set up a local server (see [my server repo](https://github.com/thanhsonng/chatgpt-server)). This was because the server relied on GUI to work. In short, ChatGPT was very popular, and to reduce its server load, it used various types of Captcha to filter out abusive activities. To solve Captchas, you need a GUI. Even though this additional setup added friction for people who wanted to try out my app, at the time, I did not have a solution. Most backend hostings I was used to, such as Heroku or Vercel, did not support GUI-enabled servers.
+In the first published version, ChatGPT With Voice came with only a frontend client. If you wanted it to work, you had to set up a local server (see [my server repo](https://github.com/sonngdev/chatgpt-server)). This was because the server relied on GUI to work. In short, ChatGPT was very popular, and to reduce its server load, it used various types of Captcha to filter out abusive activities. To solve Captchas, you need a GUI. Even though this additional setup added friction for people who wanted to try out my app, at the time, I did not have a solution. Most backend hostings I was used to, such as Heroku or Vercel, did not support GUI-enabled servers.
 
 ![Local server setup instruction](/post-assets/230204-local-server-setup.png)
 

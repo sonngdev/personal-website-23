@@ -19,7 +19,7 @@ const PROJECTS = [
     description: 'See the most common pathfinding algorithms in action.',
     technologies: 'React, TypeScript, Vite, Immer, Netlify.',
     projectUrl: 'https://algorithms.sonng.dev',
-    githubUrl: 'https://github.com/sonngdev/algorithm-visualizer',
+    githubUrl: 'https://github.com/sonngdev/algorithms-visualizer',
   },
   {
     img: chatgptVoiceImg,

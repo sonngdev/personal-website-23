@@ -29,11 +29,11 @@ function HomePage() {
 
           <p>
             {'You can find me on '}
-            <a href="https://github.com/thanhsonng" target="_blank" rel="noreferrer">
+            <a href="https://github.com/sonngdev" target="_blank" rel="noreferrer">
               GitHub
             </a>
             {', '}
-            <a href="https://www.linkedin.com/in/thanhsonng/" target="_blank" rel="noreferrer">
+            <a href="https://www.linkedin.com/in/sonngdev" target="_blank" rel="noreferrer">
               LinkedIn
             </a>
             {', and '}

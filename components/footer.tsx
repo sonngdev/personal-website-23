@@ -7,13 +7,13 @@ export default function Footer() {
       <Container>
         <div className="flex flex-col items-center gap-y-4 lg:flex-row lg:justify-between">
           <div className="flex gap-x-4 lg:order-2">
-            <a target="_blank" rel="noreferrer" href="https://github.com/thanhsonng" aria-label="thanhsonng on GitHub">
+            <a target="_blank" rel="noreferrer" href="https://github.com/sonngdev" aria-label="sonngdev on GitHub">
               <GitHub size={16} />
             </a>
-            <a target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/thanhsonng/" aria-label="thanhsonng on Twitter">
+            <a target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/sonngdev" aria-label="sonngdev on LinkedIn">
               <Linkedin size={16} />
             </a>
-            <a target="_blank" rel="noreferrer" href="https://twitter.com/thanhsonng211" aria-label="thanhsonng211 on LinkedIn">
+            <a target="_blank" rel="noreferrer" href="https://twitter.com/thanhsonng211" aria-label="thanhsonng211 on Twitter">
               <Twitter size={16} />
             </a>
             <a target="_blank" rel="noreferrer" href="mailto:son@sonng.dev" aria-label="Email me at son@sonng.dev">

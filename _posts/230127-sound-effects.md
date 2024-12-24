@@ -19,26 +19,26 @@ In practice, you would want to handle edge cases such as when a sound is played 
 
 ```ts
 class SoundManager {
-  private registeredSounds: Record<string, HTMLAudioElement> = {};
+  private static registeredSounds: Record<string, HTMLAudioElement> = {};
 
-  createSound(src: string): HTMLAudioElement {
+  static createSound(src: string): HTMLAudioElement {
     if (!this.registeredSounds[src]) {
       this.registeredSounds[src] = new Audio(src);
     }
     return this.registeredSounds[src];
   }
 
-  play(sound: HTMLAudioElement) {
+  static play(sound: HTMLAudioElement) {
     this.muteAll();
     sound.play();
   }
 
-  mute(sound: HTMLAudioElement) {
+  static mute(sound: HTMLAudioElement) {
     sound.pause();
     sound.currentTime = 0;
   }
 
-  private muteAll() {
+  private static muteAll() {
     Object.values(this.registeredSounds).forEach(this.mute);
   }
 }
@@ -106,10 +106,10 @@ Let's make a wrapper to simplify the API, and turn the complexity of callbacks t
 
 ```ts
 class SoundManager {
-  private context: AudioContext | null = null;
-  private loadedSounds: Record<string, AudioBuffer> = {};
+  private static context: AudioContext | null = null;
+  private static loadedSounds: Record<string, AudioBuffer> = {};
 
-  loadSound(src: string): Promise<AudioBuffer> {
+  static loadSound(src: string): Promise<AudioBuffer> {
     return new Promise((resolve, reject) => {
       if (this.loadedSounds[src]) {
         resolve(this.loadedSounds[src]);
@@ -139,7 +139,7 @@ class SoundManager {
     });
   }
 
-  play(buffer: AudioBuffer) {
+  static play(buffer: AudioBuffer) {
     if (!this.context) {
       this.context = new AudioContext();
     }

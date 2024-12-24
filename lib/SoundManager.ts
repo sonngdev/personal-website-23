@@ -1,8 +1,8 @@
 class SoundManager {
-  private context: AudioContext | null = null;
-  private loadedSounds: Record<string, AudioBuffer> = {};
+  private static context: AudioContext | null = null;
+  private static loadedSounds: Record<string, AudioBuffer> = {};
 
-  loadSound(src: string): Promise<AudioBuffer> {
+  static loadSound(src: string): Promise<AudioBuffer> {
     return new Promise((resolve, reject) => {
       if (this.loadedSounds[src]) {
         resolve(this.loadedSounds[src]);
@@ -32,7 +32,7 @@ class SoundManager {
     });
   }
 
-  play(buffer: AudioBuffer) {
+  static play(buffer: AudioBuffer) {
     if (!this.context) {
       this.context = new AudioContext();
     }
@@ -44,6 +44,4 @@ class SoundManager {
   }
 }
 
-const soundManager = new SoundManager();
-
-export { soundManager as SoundManager };
+export { SoundManager };

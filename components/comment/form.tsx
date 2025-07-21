@@ -2,7 +2,7 @@ import { useAuth0 } from '@auth0/auth0-react';
 
 type CommentFormProps = {
   text: string
-  setText: Function
+  setText: (text: string) => void
   onSubmit: (e: React.FormEvent) => Promise<void>
 }
 
@@ -36,7 +36,7 @@ export default function CommentForm({
             </button>
             <button
               className="text-gray-500"
-              onClick={() => logout({ returnTo: window.location.origin })}
+              onClick={() => logout({ logoutParams: { returnTo: window.location.origin }})}
             >
               Log Out
             </button>

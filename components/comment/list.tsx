@@ -20,7 +20,7 @@ export default function CommentList({ comments, onDelete }: CommentListProps) {
 
           return (
             <div key={comment.created_at} className="flex space-x-4">
-              <div className="flex-shrink-0">
+              <div className="shrink-0">
                 <img
                   src={comment.user.picture}
                   alt={comment.user.name}
@@ -30,7 +30,7 @@ export default function CommentList({ comments, onDelete }: CommentListProps) {
                 />
               </div>
 
-              <div className="flex-grow">
+              <div className="grow">
                 <div className="flex space-x-2">
                   <b>{comment.user.name}</b>
                   <time className="text-gray-400">

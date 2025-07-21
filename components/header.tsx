@@ -40,7 +40,7 @@ export default function Header() {
               Blog
             </Link>
             <button
-              className="w-10 h-10 flex justify-center items-center rounded transition-colors hover:bg-dark/10 dark:hover:bg-light/10"
+              className="w-10 h-10 flex justify-center items-center rounded-sm transition-colors hover:bg-dark/10 dark:hover:bg-light/10"
               onClick={switchTheme}
               aria-label="Switch theme"
             >
